@@ -18,6 +18,7 @@
     - include: ./tasks/atom-packages-web.yml
     - include: ./tasks/kupfer.yml
     - include: ./tasks/leafpad.yml
+    - include: ./tasks/lxterminal.yml
     - include: ./tasks/chromium.yml
     # - include: ./tasks/google-chrome.yml
     - include: ./tasks/oraclejdk8.yml
