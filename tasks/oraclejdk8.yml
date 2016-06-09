@@ -1,0 +1,15 @@
+---
+- include: ../repositories/java.yml
+- name: Has the Oracle Java 8 license been accepted
+  shell: /usr/bin/debconf-get-selections | /bin/grep "oracle-java8-installer\s*shared/accepted-oracle-license-v1-1\s*select\s*true"
+  register: java_8_license_accepted
+  ignore_errors: True
+- name: Accept Oracle Java 8 license
+  shell: /bin/echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
+  when: java_8_license_accepted|failed
+- name: Install Oracle Java 8
+  apt: pkg=oracle-java8-installer state=present
+  async: 1800
+  poll: 10
+- name: Set JAVA_HOME environment variable
+  lineinfile: dest=/home/{{ username }}/.bashrc line='export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")'

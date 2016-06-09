@@ -1,0 +1,6 @@
+---
+- include: ./apm.yml plugin_name='atom-beautify'
+- include: ./apm.yml plugin_name='atom-bootstrap3'
+- include: ./apm.yml plugin_name='emmet'
+- include: ./apm.yml plugin_name='pigments'
+

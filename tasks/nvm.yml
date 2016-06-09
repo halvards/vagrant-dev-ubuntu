@@ -1,0 +1,7 @@
+---
+- name: Install NVM
+  shell: /usr/bin/curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | /bin/bash
+         creates=/home/{{ username }}/.nvm/nvm.sh
+         chdir=/home/{{ username }}
+  sudo_user: "{{ username }}"
+

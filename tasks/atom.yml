@@ -1,0 +1,5 @@
+---
+- get_url: url=https://atom.io/download/deb
+           dest=/vagrant/share/atom.deb
+- apt: deb=/vagrant/share/atom.deb
+

@@ -1,0 +1,18 @@
+---
+- include: ./vim.yml
+- name: Ensure vim colors directory exists
+  file: path=/home/{{ username }}/.vim/colors
+        state=directory
+        mode=0755 owner={{ username }} group={{ username }}
+- name: Download atom-dark theme
+  get_url: url=https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom-dark.vim
+           dest=/home/{{ username }}/.vim/colors/atom-dark.vim
+  sudo_user: "{{ username }}"
+- name: Download atom-dark-256 theme
+  get_url: url=https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom-dark-256.vim
+           dest=/home/{{ username }}/.vim/colors/atom-dark-256.vim
+  sudo_user: "{{ username }}"
+- name: Set atom-dark as default colorscheme
+  lineinfile: dest=/home/{{ username }}/.vimrc
+              line='colorscheme atom-dark'
+

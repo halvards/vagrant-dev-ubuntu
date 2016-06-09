@@ -1,0 +1,4 @@
+---
+- apt: pkg=debconf-utils
+- name: Oracle Java DEB Repository
+  apt_repository: repo="ppa:webupd8team/java" state=present update_cache=yes

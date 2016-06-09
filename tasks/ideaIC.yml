@@ -1,0 +1,32 @@
+---
+- include: ./inotifylimit.yml
+- include: ./oraclejdk8.yml
+- get_url: url=https://download-cf.jetbrains.com/idea/ideaIC-2016.1.3.tar.gz
+           dest=/vagrant/share/ideaIC-2016.1.3.tar.gz
+           sha256sum=d1cd3f9fd650c00ba85181da6d66b4b80b8e48ce5f4f15b5f4dc67453e96a179
+  async: 1800
+  poll: 10
+- command: /bin/tar -zxf /vagrant/share/ideaIC-2016.1.3.tar.gz --directory=/opt
+           creates=/opt/idea-IC-145.1617.8/bin
+- file: path=/opt/ideaIC state=link src=/opt/idea-idea-IC-145.1617.8
+- file: path=/usr/local/bin/ideaIC.sh state=link src=/opt/ideaIC/bin/idea.sh
+- copy: src=../files/ideaIC.desktop
+        dest=/home/{{ username }}/Desktop/ideaIC.desktop
+        mode=0775 owner={{ username }} group={{ username }}
+# - file: path=/home/{{ username }}/{{ item }}
+#         state=directory
+#         mode=0775 owner={{ username }} group={{ username }}
+#   with_items:
+#     - "{{ idea_config_dir }}"
+#     - "{{ idea_config_dir }}/config"
+#     - "{{ idea_config_dir }}/config/options"
+# - copy: src=../../../share/conf/idea/disabled_plugins.txt
+#         dest=/home/{{ username }}/{{ idea_config_dir }}/config/disabled_plugins.txt
+#         force=no mode=0664 owner={{ username }} group={{ username }}
+# - copy: src=../../../share/conf/idea/jdk7.table.xml
+#         dest=/home/{{ username }}/{{ idea_config_dir }}/config/options/jdk.table.xml
+#         mode=0664 owner={{ username }} group={{ username }}
+- apt: pkg=gtk2-engines-pixbuf state=present
+  when: ansible_os_family == "Debian"
+- include: ./keybindings.yml
+  when: ansible_os_family == "Debian"

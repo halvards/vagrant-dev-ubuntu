@@ -1,0 +1,16 @@
+---
+- apt: pkg={{ item }} state=present
+  with_items:
+    - apt-transport-https
+    - lsb-release
+    - python-pycurl
+- name: Determine Ubuntu/Debian distribution
+  shell: /usr/bin/lsb_release --codename --short
+  register: distro
+- name: Install NodeSource signing key
+  apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+- name: Add NodeSource repo for {{ version }} on {{ distro.stdout }}
+  apt_repository: repo='deb https://deb.nodesource.com/{{ version }} {{ distro.stdout }} main' update_cache=no
+- name: Add NodeSource source repo for {{ version }} on {{ distro.stdout }}
+  apt_repository: repo='deb-src https://deb.nodesource.com/{{ version }} {{ distro.stdout }} main' update_cache=yes
+

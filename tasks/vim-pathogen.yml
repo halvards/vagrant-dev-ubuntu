@@ -1,0 +1,24 @@
+---
+- include: ./vim.yml
+- file: path=/home/{{ username }}/{{ item }}
+        state=directory
+        mode=0755 owner={{ username }} group={{ username }}
+  with_items:
+    - .vim
+    - .vim/autoload
+    - .vim/bundle
+- get_url: url=https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+           dest=/home/{{ username }}/.vim/autoload/pathogen.vim
+  sudo_user: "{{ username }}"
+- name: Create a .vimrc file if one does not already exist
+  copy: src=../files/vimrc
+        dest=/home/{{ username }}/.vimrc
+        force=no
+        mode=0644 owner={{ username }} group={{ username }}
+- name: Ensure Pathogen is loaded, even if .vimrc already exists
+  lineinfile: dest=/home/{{ username }}/.vimrc
+              line='execute pathogen#infect()'
+- name: Fix terminal colours issue
+  lineinfile: dest=/home/{{ username }}/.vimrc
+              line='set t_Co=256'
+
