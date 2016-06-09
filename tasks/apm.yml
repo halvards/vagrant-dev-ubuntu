@@ -1,5 +1,4 @@
 ---
-- include: ./atom.yml
 - name: Is the {{ plugin_name }} Atom package already installed?
   shell: /usr/bin/apm list
   register: apm_list
@@ -8,4 +7,3 @@
   shell: /usr/bin/apm install {{ plugin_name }}
   when: apm_list.stdout.find(' {{ plugin_name }}@') == -1
   sudo_user: "{{ username }}"
-
