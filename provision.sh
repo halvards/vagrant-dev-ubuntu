@@ -8,7 +8,7 @@ if [ ! -f /vagrant/$ANSIBLE_PLAYBOOK ]; then
 	exit 1
 fi
 
-if [ ! -n $(which ansible-playbook) ]; then
+if [ ! -n "$(which ansible-playbook)" ]; then
   echo "Updating apt cache"
   apt-get update
   echo "Installing Ansible"
