@@ -24,3 +24,4 @@
     # - include: ./tasks/openjdk8.yml
     - include: ./tasks/microsoft-fonts.yml
     - include: ./tasks/open-sans.yml
+    - include: ./tasks/ideaIC.yml
