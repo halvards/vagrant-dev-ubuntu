@@ -9,6 +9,8 @@ if [ ! -f /vagrant/$ANSIBLE_PLAYBOOK ]; then
 fi
 
 if [ ! -n "$(which ansible-playbook)" ]; then
+	echo "Adding ansible ppa"
+	apt-add-repository -y ppa:ansible/ansible
   echo "Updating apt cache"
   apt-get update
   echo "Installing Ansible"
