@@ -4,6 +4,7 @@
   with_items:
     - bash
     - bzip2
+    - ca-certificates
     - coreutils
     - curl
     - gzip
@@ -16,4 +17,3 @@
     - unzip
     - wget
     - zip
-
