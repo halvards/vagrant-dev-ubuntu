@@ -6,7 +6,6 @@
     - include: ./tasks/base.yml
     - include: ./tasks/git.yml
     # - include: ./tasks/nodejs_4.x.yml
-    # - include: ./tasks/nodejs_5.x.yml
     - include: ./tasks/nodejs_6.x.yml
     - include: ./tasks/nvm.yml
     - include: ./tasks/vim-pathogen.yml

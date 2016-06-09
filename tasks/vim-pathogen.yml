@@ -9,6 +9,7 @@
     - .vim/bundle
 - get_url: url=https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
            dest=/home/{{ username }}/.vim/autoload/pathogen.vim
+           validate_certs=no
   sudo_user: "{{ username }}"
 - name: Create a .vimrc file if one does not already exist
   copy: src=../files/vimrc
@@ -21,4 +22,3 @@
 - name: Fix terminal colours issue
   lineinfile: dest=/home/{{ username }}/.vimrc
               line='set t_Co=256'
-
