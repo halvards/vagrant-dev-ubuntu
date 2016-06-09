@@ -11,7 +11,7 @@ Vagrant.configure('2') do |config|
   config.vm.host_name = "#{ENV['USER']}.dev.ubuntu64.vagrantup.com"
 
   # Copy private key to VM for Git and other tools
-  config.vm.provision 'file', source: '~/.ssh/id_rsa', destination: '~/.ssh/id_rsa'
+  config.vm.provision 'file', source: "#{ENV['USER']}/.ssh/id_rsa", destination: '~/.ssh/id_rsa'
 
   # Provision VM with Ansible (with workaround for Windows)
   require 'rbconfig'
