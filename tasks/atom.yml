@@ -1,5 +1,10 @@
 ---
 - get_url: url=https://atom.io/download/deb
            dest=/vagrant/share/atom.deb
-           validate_certs=no
+- apt: pkg={{ item }}
+  with_items:
+    - python-apt
+    - aptitude
 - apt: deb=/vagrant/share/atom.deb
+       force=yes
+  ignore_errors: yes
