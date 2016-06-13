@@ -26,6 +26,6 @@
     - include: ./tasks/microsoft-fonts.yml
     - include: ./tasks/open-sans.yml
     - include: ./tasks/ideaIC.yml
-    - include: ./tasks/ruby_2.3.yml
-    - include: ./tasks/ruby-switch.yml
+    # - include: ./tasks/ruby_2.3.yml
+    # - include: ./tasks/ruby-switch.yml
     - include: ./tasks/docker-engine.yml
