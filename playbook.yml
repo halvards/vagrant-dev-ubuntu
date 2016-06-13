@@ -19,10 +19,13 @@
     - include: ./tasks/kupfer.yml
     - include: ./tasks/leafpad.yml
     - include: ./tasks/lxterminal.yml
-    - include: ./tasks/chromium.yml
-    # - include: ./tasks/google-chrome.yml
+    - include: ./tasks/google-chrome.yml
+    # - include: ./tasks/chromium.yml
     - include: ./tasks/oraclejdk8.yml
     # - include: ./tasks/openjdk8.yml
     - include: ./tasks/microsoft-fonts.yml
     - include: ./tasks/open-sans.yml
     - include: ./tasks/ideaIC.yml
+    - include: ./tasks/ruby_2.3.yml
+    - include: ./tasks/ruby-switch.yml
+    - include: ./tasks/docker-engine.yml
