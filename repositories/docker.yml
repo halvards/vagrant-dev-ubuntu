@@ -1,0 +1,14 @@
+---
+- apt: pkg={{ item }}
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - lsb-release
+    - python-pycurl
+- name: Determine Ubuntu/Debian distribution
+  shell: /usr/bin/lsb_release --codename --short
+  register: distro
+- name: Install Docker repository signing key
+  apt_key: keyserver=p80.pool.sks-keyservers.net id=58118E89F3A912897C070ADBF76221572C52609D
+- name: Add Docker repo for {{ distro.stdout }}
+  apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-{{ distro.stdout }} main' update_cache=yes

@@ -1,0 +1,14 @@
+# https://docs.docker.com/engine/installation/linux/ubuntulinux/
+---
+- include: ../repositories/docker.yml
+- name: Determine kernel version
+  shell: /bin/uname -r
+  register: kernelversion
+- name: Install the linux-image-extra package to use the aufs storage driver
+  apt: pkg=linux-image-extra-{{ kernelversion.stdout }}
+- name: Install docker-engine
+  apt: pkg=docker-engine
+- name: Start docker service and ensure it starts automatically on boot
+  service: name=docker state=started enabled=yes
+- name: Add {{ username }} user to docker group
+  user: name={{ username }} groups=docker append=yes
