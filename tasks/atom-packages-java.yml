@@ -1,4 +1,3 @@
 ---
-- include: ./apm.yml plugin_name='atom-beautify'
 - include: ./apm.yml plugin_name='autocomplete-java'
 - include: ./apm.yml plugin_name='linter-javac'
