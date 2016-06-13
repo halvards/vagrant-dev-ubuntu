@@ -1,0 +1,3 @@
+---
+- include: ../repositories/brightbox-ruby.yml
+- apt: pkg=ruby-switch
