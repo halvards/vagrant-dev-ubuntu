@@ -12,8 +12,10 @@
 - name: Get JDK installation directory
   shell: /bin/readlink -f /usr/bin/javac | sed "s:/bin/javac::"
   register: java_home
-- name: Set JAVA_HOME environment variable
+- name: Set JAVA_HOME environment variable in .bashrc
   lineinfile: dest=/home/{{ username }}/.bashrc line='export JAVA_HOME={{ java_home.stdout }}'
+- name: Set JAVA_HOME environment variable in .profile
+  lineinfile: dest=/home/{{ username }}/.profile line='export JAVA_HOME={{ java_home.stdout }}'
 - name: Download Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files 8
   get_url: url=http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip
            headers=Cookie:oraclelicense=accept-securebackup-cookie

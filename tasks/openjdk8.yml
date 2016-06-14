@@ -1,2 +1,10 @@
 ---
-- apt: pkg=openjdk-8-jdk
+- name: Install OpenJDK 8 JDK
+  apt: pkg=openjdk-8-jdk
+- name: Get JDK installation directory
+  shell: /bin/readlink -f /usr/bin/javac | sed "s:/bin/javac::"
+  register: java_home
+- name: Set JAVA_HOME environment variable in .bashrc
+  lineinfile: dest=/home/{{ username }}/.bashrc line='export JAVA_HOME={{ java_home.stdout }}'
+- name: Set JAVA_HOME environment variable in .profile
+  lineinfile: dest=/home/{{ username }}/.profile line='export JAVA_HOME={{ java_home.stdout }}'
