@@ -9,7 +9,17 @@
   when: java_8_license_accepted|failed
 - name: Install Oracle Java 8
   apt: pkg=oracle-java8-installer state=present
-  async: 1800
-  poll: 10
+- name: Get JDK installation directory
+  shell: /bin/readlink -f /usr/bin/javac | sed "s:/bin/javac::"
+  register: java_home
 - name: Set JAVA_HOME environment variable
-  lineinfile: dest=/home/{{ username }}/.bashrc line='export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")'
+  lineinfile: dest=/home/{{ username }}/.bashrc line='export JAVA_HOME={{ java_home.stdout }}'
+- name: Download Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files 8
+  get_url: url=http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip
+           headers=Cookie:oraclelicense=accept-securebackup-cookie
+           sha256sum=f3020a3922efd6626c2fff45695d527f34a8020e938a49292561f18ad1320b59
+           dest=/vagrant/share/jce_policy-8.zip
+           validate_certs=no
+- name: Install JCE Policy Files
+  command: /usr/bin/unzip -q -j -o -d {{ java_home.stdout }}/jre/lib/security /vagrant/share/jce_policy-8.zip
+           creates={{ java_home.stdout }}/jre/lib/security/README.txt
