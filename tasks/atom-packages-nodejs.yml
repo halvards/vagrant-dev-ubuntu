@@ -3,6 +3,4 @@
 - include: ./apm.yml plugin_name='javascript-snippets'
 - include: ./apm.yml plugin_name='language-javascript-jsx'
 - include: ./apm.yml plugin_name='node-debugger'
-- include: ./apm.yml plugin_name='node-resolver'
-- include: ./apm.yml plugin_name='npm-docs'
 - include: ./apm.yml plugin_name='npm-helper'
