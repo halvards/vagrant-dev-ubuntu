@@ -29,3 +29,4 @@
     # - include: ./tasks/ruby_2.3.yml
     # - include: ./tasks/ruby-switch.yml
     - include: ./tasks/docker-engine.yml
+    - include: ./tasks/docker-compose.yml

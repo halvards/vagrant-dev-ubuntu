@@ -1,0 +1,5 @@
+---
+- name: Install python-pip
+  apt: pkg=python-pip
+- name: Upgrade python-pip
+  shell: pip install --upgrade pip

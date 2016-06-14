@@ -6,14 +6,8 @@
   register: kernelversion
 - name: Install the linux-image-extra package to use the aufs storage driver
   apt: pkg=linux-image-extra-{{ kernelversion.stdout }}
-- name: Install docker components
-  apt: pkg={{ item }}
-  with_items:
-    - docker
-    - docker-compose
-    - docker.io
-    - docker-engine
-    - systemd-docker
+- name: Install docker-engine
+  apt: pkg=docker-engine
 - name: Start docker service and ensure it starts automatically on boot
   service: name=docker state=started enabled=yes
 - name: Add {{ username }} user to docker group
