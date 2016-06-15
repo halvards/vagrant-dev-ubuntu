@@ -49,7 +49,7 @@ Vagrant.configure('2') do |config|
     vb.customize ['modifyvm', :id, '--cpus', '1']
     vb.customize ['modifyvm', :id, '--vram', '128']
     vb.customize ['modifyvm', :id, '--accelerate2dvideo', 'off']
-    vb.customize ['modifyvm', :id, '--accelerate3d', 'off']
+    vb.customize ['modifyvm', :id, '--accelerate3d', 'on']
 
     # Enable shared clipboard
     vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
