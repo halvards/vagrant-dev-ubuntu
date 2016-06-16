@@ -45,9 +45,9 @@ Vagrant.configure('2') do |config|
     vb.name = 'dev-ubuntu64'
 
     # Set memory allocated to the VM in MB
-    vb.customize ['modifyvm', :id, '--memory', '2048']
-    vb.customize ['modifyvm', :id, '--cpus', '1']
-    vb.customize ['modifyvm', :id, '--vram', '128']
+    vb.customize ['modifyvm', :id, '--memory', '4096']
+    vb.customize ['modifyvm', :id, '--cpus', '2']
+    vb.customize ['modifyvm', :id, '--vram', '256']
     vb.customize ['modifyvm', :id, '--accelerate2dvideo', 'off']
     vb.customize ['modifyvm', :id, '--accelerate3d', 'on']
 
