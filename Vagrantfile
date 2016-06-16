@@ -4,10 +4,13 @@
 Vagrant.configure('2') do |config|
 
   # Base box (from Hashicorp Atlas)
-  config.vm.box = 'halvards/lubuntu1604'
+  config.vm.box = 'halvards/ubuntumate1604'
 
   # Assign this VM a unique hostname
   config.vm.host_name = "#{ENV['USER']}.dev.ubuntu64.vagrantup.com"
+
+  # The url from where the 'config.vm.box' box will be fetched.
+  # config.vm.box_url = 'https://atlas.hashicorp.com/halvards/boxes/ubuntumate1604/versions/20160616.0.0/providers/virtualbox.box'
 
   # Copy private key to VM for Git and other tools
   config.vm.provision 'file', source: "#{ENV['HOME']}/.ssh/id_rsa", destination: '~/.ssh/id_rsa'
@@ -22,7 +25,7 @@ Vagrant.configure('2') do |config|
       sh.args = 'playbook.yml'
     end
   else
-  #   # Standard Ansible provisioning (for Mac and Linux hosts)
+    # Standard Ansible provisioning (for Mac and Linux hosts)
     config.vm.provision 'ansible' do |ansible|
       ansible.playbook = 'playbook.yml'
       ansible.verbose = 'vv' # v, vv, vvv, vvvv
@@ -50,6 +53,7 @@ Vagrant.configure('2') do |config|
     vb.customize ['modifyvm', :id, '--vram', '256']
     vb.customize ['modifyvm', :id, '--accelerate2dvideo', 'off']
     vb.customize ['modifyvm', :id, '--accelerate3d', 'on']
+    vb.customize ['setextradata', :id, 'GUI/HiDPI/UnscaledOutput', '1']
 
     # Enable shared clipboard
     vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
