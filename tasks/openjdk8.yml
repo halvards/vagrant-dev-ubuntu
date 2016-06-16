@@ -1,6 +1,9 @@
 ---
-- name: Install OpenJDK 8 JDK
-  apt: pkg=openjdk-8-jdk
+- name: Install OpenJDK 8 JDK with sources
+  apt: pkg={{ item }}
+  with_items:
+    - openjdk-8-jdk
+    - openjdk-8-source
 - name: Get JDK installation directory
   shell: /bin/readlink -f /usr/bin/javac | sed "s:/bin/javac::"
   register: java_home
