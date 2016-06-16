@@ -1,6 +1,6 @@
 # https://docs.docker.com/engine/installation/linux/ubuntulinux/
 ---
-- include: ../repositories/docker.yml
+- include: ../../repositories/docker-repo.yml
 - name: Determine kernel version
   shell: /bin/uname -r
   register: kernelversion

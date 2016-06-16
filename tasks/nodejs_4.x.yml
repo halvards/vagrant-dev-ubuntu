@@ -1,3 +1,0 @@
----
-- include: ../repositories/nodesource.yml version='node_4.x'
-- apt: pkg=nodejs

@@ -1,0 +1,3 @@
+---
+- include: ../../repositories/brightbox-ruby-repo.yml
+- apt: pkg=ruby2.3

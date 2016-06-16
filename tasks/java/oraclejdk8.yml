@@ -1,5 +1,5 @@
 ---
-- include: ../repositories/java.yml
+- include: ../../repositories/oracle-java-repo.yml
 - name: Has the Oracle Java 8 license been accepted
   shell: /usr/bin/debconf-get-selections | /bin/grep "oracle-java8-installer\s*shared/accepted-oracle-license-v1-1\s*select\s*true"
   register: java_8_license_accepted

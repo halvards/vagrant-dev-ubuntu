@@ -1,0 +1,3 @@
+---
+- include: ../../repositories/nodesource-nodejs-repo.yml version='node_6.x'
+- apt: pkg=nodejs

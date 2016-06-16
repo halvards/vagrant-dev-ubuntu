@@ -3,30 +3,29 @@
   vars:
     username: vagrant
   tasks:
-    - include: ./tasks/base.yml
-    - include: ./tasks/git.yml
-    # - include: ./tasks/nodejs_4.x.yml
-    - include: ./tasks/nodejs_6.x.yml
-    - include: ./tasks/nvm.yml
-    - include: ./tasks/vim-pathogen.yml
-    - include: ./tasks/vim-theme-atom-dark.yml
-    - include: ./tasks/vimx.yml
-    - include: ./tasks/atom.yml
-    - include: ./tasks/atom-packages-generic.yml
-    - include: ./tasks/atom-packages-java.yml
-    - include: ./tasks/atom-packages-nodejs.yml
-    - include: ./tasks/atom-packages-web.yml
-    - include: ./tasks/kupfer.yml
-    - include: ./tasks/leafpad.yml
-    - include: ./tasks/lxterminal.yml
-    - include: ./tasks/google-chrome.yml
-    # - include: ./tasks/chromium.yml
-    - include: ./tasks/oraclejdk8.yml
-    # - include: ./tasks/openjdk8.yml
-    - include: ./tasks/microsoft-fonts.yml
-    - include: ./tasks/open-sans.yml
-    - include: ./tasks/ideaIC.yml
-    # - include: ./tasks/ruby_2.3.yml
-    # - include: ./tasks/ruby-switch.yml
-    - include: ./tasks/docker-engine.yml
-    - include: ./tasks/docker-compose.yml
+    - include: ./tasks/utils/base.yml
+    - include: ./tasks/utils/git.yml
+    # - include: ./tasks/nodejs/nodejs_4.x.yml
+    - include: ./tasks/nodejs/nodejs_6.x.yml
+    - include: ./tasks/nodejs/nvm.yml
+    - include: ./tasks/vim/vim-pathogen.yml
+    - include: ./tasks/vim/vim-theme-atom-dark.yml
+    - include: ./tasks/vim/vimx.yml
+    - include: ./tasks/atom/atom.yml
+    - include: ./tasks/atom/atom-packages-generic.yml
+    - include: ./tasks/atom/atom-packages-java.yml
+    - include: ./tasks/atom/atom-packages-nodejs.yml
+    - include: ./tasks/atom/atom-packages-web.yml
+    - include: ./tasks/apps/kupfer.yml
+    - include: ./tasks/apps/leafpad.yml
+    - include: ./tasks/apps/google-chrome.yml
+    # - include: ./tasks/apps/chromium.yml
+    - include: ./tasks/java/oraclejdk8.yml
+    # - include: ./tasks/java/openjdk8.yml
+    - include: ./tasks/fonts/microsoft-fonts.yml
+    - include: ./tasks/fonts/open-sans.yml
+    - include: ./tasks/java/ideaIC.yml
+    # - include: ./tasks/ruby/ruby_2.3.yml
+    # - include: ./tasks/ruby/ruby-switch.yml
+    - include: ./tasks/docker/docker-engine.yml
+    - include: ./tasks/docker/docker-compose.yml

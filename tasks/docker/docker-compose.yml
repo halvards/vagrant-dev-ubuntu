@@ -1,4 +1,4 @@
 ---
-- include: ./pip.yml
+- include: ../python/pip.yml
 - name: Install docker-compose
   pip: name=docker-compose

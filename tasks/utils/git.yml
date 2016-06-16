@@ -1,5 +1,5 @@
 ---
-- include: ../repositories/git.yml
+- include: ../../repositories/git-repo.yml
 - apt: pkg=git
 - copy: src=../files/git-config
         dest=/home/{{ username }}/.gitconfig
@@ -12,4 +12,3 @@
         dest=/home/{{ username }}/.ssh/config
         force=no
         mode=0600 owner={{ username }} group={{ username }}
-
