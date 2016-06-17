@@ -1,0 +1,10 @@
+---
+- include: ./vim-pathogen.yml
+- git: repo={{ bundle_repo_url }}
+       dest=/home/{{ username }}/.vim/bundle/{{ bundle_name }}
+       recursive=yes
+       version=HEAD
+       force=no
+       accept_hostkey=yes
+  sudo_user: "{{ username }}"
+

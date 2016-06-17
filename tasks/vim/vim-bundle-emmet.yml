@@ -1,0 +1,4 @@
+---
+# vim plugin for HTML and CSS hi-speed coding
+- include: ./vim-bundle.yml bundle_name='emmet' bundle_repo_url='https://github.com/vim-scripts/Emmet.vim.git'
+

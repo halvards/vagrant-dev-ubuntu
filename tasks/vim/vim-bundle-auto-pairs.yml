@@ -1,0 +1,4 @@
+---
+# Vim plugin to insert or delete brackets, parens, quotes in pairs. Alternative to unimpaired
+- include: ./vim-bundle.yml bundle_name='auto-pairs' bundle_repo_url='https://github.com/jiangmiao/auto-pairs.git'
+

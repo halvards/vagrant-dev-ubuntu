@@ -1,0 +1,4 @@
+---
+# Vastly improved Javascript indentation and syntax support
+- include: ./vim-bundle.yml bundle_name='javascript' bundle_repo_url='https://github.com/pangloss/vim-javascript.git'
+

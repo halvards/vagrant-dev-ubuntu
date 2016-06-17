@@ -1,0 +1,23 @@
+---
+# Provides keyword completion by maintaining a cache of keywords in the current buffer
+# Optionally, extend with neosnippet and vim-snippets
+- include: ./vim-bundle.yml bundle_name='neocomplete' bundle_repo_url='https://github.com/Shougo/neocomplete.vim.git'
+- lineinfile: dest=/home/{{ username }}/.vimrc
+              line='let g:acp_enableAtStartup = 0 \" Disable AutoComplPop'
+- lineinfile: dest=/home/{{ username }}/.vimrc
+              line='let g:neocomplete#enable_at_startup = 1 \" Use neocomplete'
+- lineinfile: dest=/home/{{ username }}/.vimrc
+              line='let g:neocomplete#enable_smart_case = 1 \" Use smartcase'
+- lineinfile: dest=/home/{{ username }}/.vimrc
+              line='let g:neocomplete#sources#syntax#min_keyword_length = 3 \" Set minimum syntax keyword length'
+- lineinfile: dest=/home/{{ username }}/.vimrc
+              line='inoremap <expr><C-g> neocomplete#undo_completion()'
+- lineinfile: dest=/home/{{ username }}/.vimrc
+              line='inoremap <expr><C-l> neocomplete#complete_common_string()'
+- lineinfile: dest=/home/{{ username }}/.vimrc
+              line='inoremap <expr><C-r> pumvisible() ? neocomplete#close_popup() {{':'}} \"\<CR>\"'
+- lineinfile: dest=/home/{{ username }}/.vimrc
+              line='inoremap <expr><TAB> pumvisible() ? \"\<C-n>\" {{':'}} \"\<TAB>\" \" tab completion'
+- lineinfile: dest=/home/{{ username }}/.vimrc
+              line='inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() {{':'}} \"\<Space>\"'
+

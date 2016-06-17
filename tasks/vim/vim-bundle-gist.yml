@@ -1,0 +1,4 @@
+---
+# A vimscript for creating gists
+- include: ./vim-bundle.yml bundle_name='gist' bundle_repo_url='https://github.com/mattn/gist-vim.git'
+

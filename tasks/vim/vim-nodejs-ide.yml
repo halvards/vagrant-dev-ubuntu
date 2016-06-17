@@ -1,0 +1,26 @@
+---
+# Like vim-go-ide, but for node
+- include: ./vim-bundle-ack.yml
+- include: ./vim-bundle-auto-pairs.yml
+- include: ./vim-bundle-bclose.yml
+- include: ./vim-bundle-bufexplorer.yml
+- include: ./vim-bundle-csapprox.yml
+- include: ./vim-bundle-css-color.yml
+- include: ./vim-bundle-ctrlp.yml
+- include: ./vim-bundle-dispatch.yml
+- include: ./vim-bundle-emmet.yml
+- include: ./vim-bundle-fugitive.yml
+- include: ./vim-bundle-gist.yml
+- include: ./vim-bundle-gitgutter.yml
+- include: ./vim-bundle-gitv.yml
+- include: ./vim-bundle-javascript.yml
+- include: ./vim-bundle-json.yml
+- include: ./vim-bundle-neocomplete.yml
+- include: ./vim-bundle-neosnippet.yml
+- include: ./vim-bundle-nerdcommenter.yml
+- include: ./vim-bundle-nerdtree.yml
+- include: ./vim-bundle-node.yml
+- include: ./vim-bundle-sensible.yml
+- include: ./vim-bundle-snippets.yml
+- include: ./vim-bundle-syntastic.yml
+- include: ./vim-bundle-trailing-whitespace.yml

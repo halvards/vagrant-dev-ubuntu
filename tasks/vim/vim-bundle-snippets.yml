@@ -1,0 +1,4 @@
+---
+# Default snippets, use with either neosnippet or snipmate
+- include: ./vim-bundle.yml bundle_name='snippets' bundle_repo_url='https://github.com/honza/vim-snippets.git'
+

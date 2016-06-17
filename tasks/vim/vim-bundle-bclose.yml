@@ -1,0 +1,4 @@
+---
+# The BClose Vim plugin for deleting a buffer without closing the window
+- include: ./vim-bundle.yml bundle_name='bclose' bundle_repo_url='https://github.com/rbgrouleff/bclose.vim.git'
+

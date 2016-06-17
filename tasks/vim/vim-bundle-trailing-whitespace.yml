@@ -1,0 +1,4 @@
+---
+# Highlights trailing whitespace in red and provides :FixWhitespace to fix it
+- include: ./vim-bundle.yml bundle_name='trailing-whitespace' bundle_repo_url='https://github.com/bronson/vim-trailing-whitespace.git'
+

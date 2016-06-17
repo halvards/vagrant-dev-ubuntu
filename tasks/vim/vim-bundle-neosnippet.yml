@@ -1,0 +1,6 @@
+---
+# Adds snippet support to Vim. Alternative to snipmate
+- include: ./vim-bundle.yml bundle_name='neosnippet' bundle_repo_url='https://github.com/Shougo/neosnippet.vim.git'
+# Default snippets files
+- include: ./vim-bundle.yml bundle_name='neosnippet-snippets' bundle_repo_url='https://github.com/Shougo/neosnippet-snippets.git'
+

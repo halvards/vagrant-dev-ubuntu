@@ -1,0 +1,4 @@
+---
+# Shows a git diff in the gutter (sign column) and stages/reverts hunks
+- include: ./vim-bundle.yml bundle_name='gitgutter' bundle_repo_url='https://github.com/airblade/vim-gitgutter.git'
+

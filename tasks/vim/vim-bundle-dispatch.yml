@@ -1,0 +1,4 @@
+---
+# Asynchronous build and test dispatcher
+- include: ./vim-bundle.yml bundle_name='dispatch' bundle_repo_url='https://github.com/tpope/vim-dispatch.git'
+

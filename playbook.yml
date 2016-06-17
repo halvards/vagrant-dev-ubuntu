@@ -8,9 +8,9 @@
     # - include: ./tasks/nodejs/nodejs_4.x.yml
     - include: ./tasks/nodejs/nodejs_6.x.yml
     - include: ./tasks/nodejs/nvm.yml
-    - include: ./tasks/vim/vim-pathogen.yml
-    - include: ./tasks/vim/vim-theme-atom-dark.yml
     - include: ./tasks/vim/vimx.yml
+    - include: ./tasks/vim/vim-nodejs-ide.yml
+    - include: ./tasks/vim/vim-theme-atom-dark.yml
     - include: ./tasks/atom/atom.yml
     - include: ./tasks/atom/atom-packages-generic.yml
     - include: ./tasks/atom/atom-packages-java.yml
@@ -20,6 +20,7 @@
     - include: ./tasks/apps/leafpad.yml
     - include: ./tasks/apps/google-chrome.yml
     # - include: ./tasks/apps/chromium.yml
+    # - include: ./tasks/apps/firefox.yml
     - include: ./tasks/java/oraclejdk8.yml
     # - include: ./tasks/java/openjdk8.yml
     - include: ./tasks/fonts/microsoft-fonts.yml

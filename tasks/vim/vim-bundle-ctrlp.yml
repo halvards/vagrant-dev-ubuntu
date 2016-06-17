@@ -1,0 +1,4 @@
+---
+# Fuzzy file, buffer, mru, tag, etc finder
+- include: ./vim-bundle.yml bundle_name='ctrlp' bundle_repo_url='https://github.com/kien/ctrlp.vim.git'
+

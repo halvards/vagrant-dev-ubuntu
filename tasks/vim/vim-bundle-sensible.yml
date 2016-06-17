@@ -1,0 +1,4 @@
+---
+# A universal set of vim defaults that (hopefully) everyone can agree on
+- include: ./vim-bundle.yml bundle_name='sensible' bundle_repo_url='https://github.com/tpope/vim-sensible.git'
+

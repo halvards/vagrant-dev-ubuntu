@@ -1,0 +1,4 @@
+---
+# Vim plugin for the Perl module / CLI script 'ack'
+- include: ./vim-bundle.yml bundle_name='ack' bundle_repo_url='https://github.com/mileszs/ack.vim.git'
+

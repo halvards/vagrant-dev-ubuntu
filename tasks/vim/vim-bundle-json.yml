@@ -1,0 +1,4 @@
+---
+# A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing
+- include: ./vim-bundle.yml bundle_name='json' bundle_repo_url='https://github.com/elzr/vim-json.git'
+

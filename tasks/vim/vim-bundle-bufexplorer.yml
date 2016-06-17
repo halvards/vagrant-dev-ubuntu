@@ -1,0 +1,4 @@
+---
+# Quickly and easily switch between buffers
+- include: ./vim-bundle.yml bundle_name='bufexplorer' bundle_repo_url='https://github.com/corntrace/bufexplorer.git'
+

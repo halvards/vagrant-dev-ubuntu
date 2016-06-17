@@ -1,0 +1,4 @@
+---
+# Vim plugin for commenting
+- include: ./vim-bundle.yml bundle_name='nerdcommenter' bundle_repo_url='https://github.com/scrooloose/nerdcommenter.git'
+

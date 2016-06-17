@@ -1,0 +1,4 @@
+---
+# A syntax checking plugin for Vim that runs files through external syntax checkers
+- include: ./vim-bundle.yml bundle_name='syntastic' bundle_repo_url='https://github.com/scrooloose/syntastic.git'
+

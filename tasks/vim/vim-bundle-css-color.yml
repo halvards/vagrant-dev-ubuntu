@@ -1,0 +1,4 @@
+---
+# Preview colours in source code while editing
+- include: ./vim-bundle.yml bundle_name='css-color' bundle_repo_url='https://github.com/ap/vim-css-color.git'
+

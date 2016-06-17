@@ -1,0 +1,4 @@
+---
+# Make gvim-only colorschemes work transparently in terminal vim
+- include: ./vim-bundle.yml bundle_name='csapprox' bundle_repo_url='https://github.com/godlygeek/csapprox.git'
+
